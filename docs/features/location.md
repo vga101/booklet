@@ -133,7 +133,7 @@ This mode relies mostly on cell tower and WiFi location to conserve power to pro
 In addition to the default settings, all location request parameters in this mode can also be changed. These parameters directly influence the raw [location request](https://developers.google.com/android/reference/com/google/android/gms/location/LocationRequest) that is send to the Android location API.  
 * `locatorInterval`: Maximum time between new location fixes. This interval is inexact and updates may arrive faster. 
 * `locatorDisplacement`: The smallest displacement in meters the user must move between location updates. Defaults to 0 and is an `and` relationship with interval. Can be used to only receive updates when the device has moved. 
-* `locatorPriority`: The priority of the request is a strong hint to the LocationClient for which location sources to use. 
+* `locatorPriority`: The priority of the request is a strong hint to the LocationClient for which location sources to use. [Accepted values](https://github.com/owntracks/android/blob/master/project/app/src/main/java/org/owntracks/android/services/BackgroundService.java#L589) are 0 (`PRIORITY_NO_POWER`), 1 (`PRIORITY_LOW_POWER`), 2 (`PRIORITY_BALANCED_POWER_ACCURACY`, default) and 3 (`PRIORITY_HIGH_ACCURACY`).
 
 
 
